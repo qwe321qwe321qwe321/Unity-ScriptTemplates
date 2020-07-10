@@ -1,0 +1,26 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+namespace #NAMESPACE# {
+    public class #SCRIPTNAME# : MonoBehaviour {
+
+        #region Unity Methods
+        // Initialize my components.
+        void Awake() {
+            #NOTRIM#
+        }
+
+        // Initialize my connections to others.
+        void Start() {
+            #NOTRIM#
+        }
+
+        // Update is called once per frame
+        void Update() {
+            #NOTRIM#
+        }
+        #endregion
+        #NOTRIM#
+    }
+}
