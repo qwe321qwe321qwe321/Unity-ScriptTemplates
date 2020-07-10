@@ -20,7 +20,7 @@ namespace Pedev.EditorExtensions {
 			file = System.IO.File.ReadAllText(path);
 
 			// Replace Namespace.
-			string _namespace = GetNamespaceByPath(path);
+			string _namespace = GetNamespaceByPath(path); // Create namesapce by the scirpt path. You can comment this if you don't like that, and then write your rule.
 			file = file.Replace("#NAMESPACE#", _namespace);
 
 			// Replace script name without editor.
@@ -33,6 +33,14 @@ namespace Pedev.EditorExtensions {
 			AssetDatabase.Refresh();
 		}
 
+		/// <summary>
+		/// Make namespace string by the scirpt path that ignoring "Scripts" and "Editor" folders.
+		/// For example:
+		///		 Assets/Pedev/Example/Scripts/Foo.cs -> Pedev.Example
+		///		 Assets/Pedev/ExampleEditor/Editor/Foo.cs -> Pedev.ExampleEditor
+		/// </summary>
+		/// <param name="path"></param>
+		/// <returns></returns>
 		private static string GetNamespaceByPath(string path) {
 			string lastPart = path.Substring(path.IndexOf("Assets"));
 			lastPart = lastPart.Substring("Assets/".Length);
