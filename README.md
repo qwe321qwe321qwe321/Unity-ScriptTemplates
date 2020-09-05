@@ -6,7 +6,15 @@ It is just a backup for personal use and it's a constant work in progress.
 ---
 ### Usage
 
-Just put `ScriptTemplates` folder into `Assets/` and restart Unity Editor.
+There are two ways to use this repo:
+
+1. Download and put `Assets/ScriptTemplates` folder into `Assets/` and restart Unity Editor.
+2. By git submodule:
+```
+cd <unity_project_root>
+git submodule add -b submodule https://github.com/qwe321qwe321qwe321/Unity-ScriptTemplates.git Assets/ScriptTemplates
+git submodule update --init
+```
 
 ![Demo](./screenshot1.png)
 
