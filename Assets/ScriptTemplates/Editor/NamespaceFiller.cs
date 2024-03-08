@@ -10,6 +10,10 @@ using UnityEditor;
 namespace Pedev.EditorExtensions {
 	public class NamespaceFiller : UnityEditor.AssetModificationProcessor {
 		public static void OnWillCreateAsset(string path) {
+			// In Unity 2022.2.X, this method is called for meta files and asset files.
+			if (!path.EndsWith(".cs.meta")) {
+				return;
+			}
 			path = path.Replace(".meta", "");
 			int index = path.LastIndexOf(".");
 			if (index < 0) return;
